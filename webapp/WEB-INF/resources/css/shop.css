@@ -1,0 +1,94 @@
+@charset "UTF-8";
+.main{
+	width: 1000px;
+	margin: 0 auto;
+}
+.header{
+	margin-bottom: 50px;
+}
+.text-center{
+	text-align: center;
+}
+.content{
+	display: grid;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-gap: 20px;
+	
+}
+.item{
+	box-shadow: 2px 2px 3px gray;
+	padding: 10px;
+}
+
+.item img{
+	width: 100%;
+}
+
+
+.view{
+	border-collapse:collapse;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.view th, .view td{
+	margin:0;
+	padding: 20px;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.view img{
+	width: 100%;
+	box-shadow: 2px 2px 3px gray;
+}
+
+.add{
+	text-align: right;
+}
+
+.insert{
+	border-collapse:collapse;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.insert th, .insert td{
+	padding: 20px;
+	border-top: 1px solid gray;
+}
+
+.insert textarea{
+	width: 100%;
+	height: 200px;
+}
+
+.menu{
+	width: 300px;
+	margin-left: 330px;
+	margin-bottom: 30px;
+	display: inline-grid;
+	grid-template-columns: 100px 100px 100px;
+	grid-gap: 20px;
+}
+.menu-item{
+	width: 100px;
+	height: 40px;
+	background: #aaa;
+	border-radius: 10px;
+	text-align: center;
+	padding-top: 8px;
+	
+}
+.menu-item a{
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	font-size: 15pt;
+}
+
+
+

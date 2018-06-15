@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+	<select id="cartList" parameterType="String" resultMap="cartMap">
+		select * from cart where u_id = #{value}
+	</select>
+	
+	<resultMap type="cartVo" id="cartMap">
+		<association select="product.getProduct" column="p_id" javaType="productVo" property="pvo"/>
+	</resultMap>
+	
+	<!-- <select id="product" parameterType="int" 
+	        resultType="productVo">
+		select * from product where id = #{value}      
+    </select> -->
+    
+    <select id="getCount" parameterType="map" resultType="int">
+    	select count(*) from cart 
+    	where p_id = #{p_id} and u_id = #{u_id}
+    </select>
+    
+    <insert id="insert" parameterType="map">
+    	insert into cart 
+    	values(seq_cart_id.nextval, #{p_id}, #{u_id}, 1)
+    </insert>
+	
+	<update id="update" parameterType="cartVo">
+		update cart set count = #{count} where id = #{id}
+	</update> 
+	
+	<delete id="delete" parameterType="int">
+		delete from cart where id = #{value}
+	</delete>
+</mapper>
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+  <select id="productList" resultType="productVo" 
+          parameterType="string">
+  	select * from product 
+  	<if test="value != null">where category = #{category}</if>
+  </select>
+  
+  <select id="getProduct" resultType="productVo" parameterType="int">
+  	select * from product where id = #{id}
+  </select>
+  
+  <insert id="insert" parameterType="productVo">
+  	insert into product values(seq_product_id.nextval,
+  	                           #{category},
+  	                           #{model},
+  	                           #{manufacturer},
+  	                           #{price},
+  	                           #{retail_pct},
+  	                           #{image_s},
+  	                           #{image_l},
+  	                           #{content},
+  	                           sysdate)
+  </insert>
+</mapper>
+
+
